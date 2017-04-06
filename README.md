@@ -84,7 +84,7 @@ Configure the script - if you use the paths from this setup guide you just have 
 set your mail address and the domains you want to use here. If you already have a user
 key-pair for Letsencrypt, copy it to the configured location:
 ```bash
-cd /opt/letsencrypt
+cd /opt/letsencrypt-nosudo
 cp letsencrypt-nosudo.conf.skel letsencrypt-nosudo.conf
 editor letsencrypt-nosudo.conf
 ```
@@ -93,7 +93,7 @@ If you haven't use Letsencrypt so far, you need to create a user key-pair to aut
 with their servers and set access rights for them:
 ```bash
 openssl genrsa 4096 > /opt/letsencrypt-nosudo/certs/user.key
-openssl rsa -in user.key -pubout > /opt/letsencrypt-nosudo/certs/user.pub
+openssl rsa -in /opt/letsencrypt-nosudo/certs/user.key -pubout > /opt/letsencrypt-nosudo/certs/user.pub
 chmod 660 /opt/letsencrypt-nosudo/certs/user.{key,pub}
 ```
 
