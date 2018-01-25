@@ -54,6 +54,7 @@ Since nginx does not support global aliases, you will have to enable it for ever
 Using the Debian way, a snippet directory is being used to include small parts of configuration
 for multiple virtual hosts. So we create a link to the snippet at that directory first:
 ```bash
+mkdir -p /etc/nginx/snippets
 ln -s /opt/letsencrypt-nosudo/webserver-config/letsencrypt-nginx-snippet.conf /etc/nginx/snippets/letsencrypt.conf
 ```
 Now add the following line to every HTTP server block you want to have a certificate for:
